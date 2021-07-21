@@ -407,7 +407,7 @@ class VideoUploadRequest {
           true, // use multipart/form-data
           FacebookAdsApi.GRAPH_VIDEO, // override graph.facebook.com
         )
-        .then(response => resolve(JSON.parse(response)))
+        .then(response => resolve(typeof response === 'string' ? JSON.parse(response) : response))
         .catch(error => reject(error));
     });
   }
