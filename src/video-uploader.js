@@ -232,11 +232,6 @@ class VideoUploadTransferRequestManager extends VideoUploadRequestManager {
         upload_session_id: context.sessionId,
         video_file_chunk: context.videoFileChunk,
       };
-      console.log(context);
-      console.log(fs.createReadStream(context.filePath, {
-        start: context.startOffset,
-        end: context.endOffset - 1,
-      }));
       request.setParams(params, {
         video_file_chunk: fs.createReadStream(context.filePath, {
           start: context.startOffset,
