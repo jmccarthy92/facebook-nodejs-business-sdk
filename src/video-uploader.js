@@ -397,6 +397,7 @@ class VideoUploadRequest {
    * Send the current request
    **/
   send(path: string | Array<string>): Object {
+    console.log(this._files);
     return new Promise((resolve, reject) => {
       this._api
         .call(
